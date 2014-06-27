@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/flot/jquery.flot.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/handlebars/handlebars.js"></script>
+  <script src="bower_components/ember/ember.js"></script>
+  <script src="bower_components/ember-data/ember-data.js"></script>
+  <script src="bower_components/emblem/dist/emblem.js"></script>
+  <script src="bower_components/simple-statistics/src/simple_statistics.js"></script>
+  
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script type="text/x-handlebars">
+  <div class="container">
+    <h1>Sensor calibration utility</h1>
+  
+    {{outlet}}
+    
+  </div>
+  
+  <div class="footer container">
+    
+    <div class="row">
+      
+      {{#each item in model}}
+        <div class="col-xs-6 col-md-3">
+          {{#link-to 'sensors.sensor' item.id class="thumbnail"}}({{item.id}}) {{item.desc}}{{/link-to}}
+        </div>
+      {{/each}}
+      
+    </div>
+    
+  </div>
+  </script>
+  
+  <script type="text/x-handlebars" id="sensors/sensor">
+  
+  <p>({{model.id}}) {{model.desc}}</p>
+  
+  <div class="row">
+
+  <div class="col-md-7">
+    <div id="plot" style="width: 100%; height: 300px"></div>
+    <div id="equation" class="text-center"></div>
+  </div>
+ 
+  <div class="col-md-5">
+    {{#each point in model.points}}
+    
+    <form class="form-inline" role="form">
+    
+      <div class="input-group form-ohms">
+        {{flot-param class="form-control" type="text" value=point.r sensor_no=model.id}}
+        <span class="input-group-addon">Ω</span>
+      </div>
+      
+      <div class="input-group form-celsius">
+        {{flot-param class="form-control" type="text" value=point.deg sensor_no=model.id disabled="disabled"}}
+        <span class="input-group-addon">℃</span>
+      </div>
+      
+      {{flot-param class="form-control form-adc" type="text" value=point.adc sensor_no=model.id}}
+    </form>
+      
+    {{/each}}
+  
+  </div>
+  
+  </script>
+  
+  <script src="calibrate.js"></script>
+  
+</body>
+</html>

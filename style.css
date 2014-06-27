@@ -1,0 +1,33 @@
+.footer {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.form-inline .form-celsius, .form-inline .form-ohms, .form-inline .form-adc {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.form-inline .form-celsius, .form-inline .form-ohms {
+  width: 30%;
+}
+
+.form-inline .form-adc {
+  width: 20%;
+}
+
+.form-inline .input-group input, .form-inline .form-adc {
+  text-align: right;
+}
+
+h1 {
+  margin-top: 40px;
+}
+
+#equation {
+  margin-top: 10px;
+}
