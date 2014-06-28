@@ -1,17 +1,8 @@
 default:
-	make calibrate
+	make server
 
-memory:
-	coffee -cw memory.coffee
+server:
+	PORT=4444 coffee push.coffee
 
-io:
-	coffee -cw io.coffee
-
-cpu:
-	coffee -cw cpu.coffee
-
-calibrate:
-	coffee -cw calibrate.coffee
-
-distributed:
-	coffee -cw distributed.coffee
+client:
+	coffee -cw public/client.coffee

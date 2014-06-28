@@ -31,3 +31,11 @@ h1 {
 #equation {
   margin-top: 10px;
 }
+
+.down {
+  color: red;
+}
+
+.adc {
+  opacity: 0.3;
+}
