@@ -11,10 +11,11 @@ Usage
 -----
 
 * clone
+* install dependencies
 
-    bower install
-    make client-once
-    make
+      bower install
+      make client-once
+      make
 
 * visit localhost:4444
 
