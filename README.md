@@ -7,8 +7,7 @@ STM32 SoC's. The same procedue can be performed with an Excel spreadsheet.
 Provides full functionality when device exposes some data on http route,
 but it isn't required.
 
-Usage
------
+## Usage
 
 * clone
 * install dependencies
@@ -24,13 +23,11 @@ Fill in the table containing (resistance, adc reading) touples.
 There are some resistance values suggested which can be easily overriden.
 
 ![alt tag](doc/plot.png)
-![alt tag](doc/readings.png)
 
 Force different resistances at input and type here readings from your ADC.
 Data will be plotted and proper equation calculated.
 
-Feedback route on http
-----------------------
+## Feedback route on http
 
 Working */adc* route allows communication with the device
 
@@ -39,6 +36,8 @@ Working */adc* route allows communication with the device
 
 where 192.168.3.3 is the default device IP address. It can be changed
 inside options.coffee.
+
+![alt tag](doc/readings.png)
 
 Without it you can still use the tool but will have to read ADC values
 by other way.
