@@ -12,9 +12,11 @@ Usage
 
 * clone
 *
-  bower install
-  make client-once
-  make
+
+    bower install
+    make client-once
+    make
+
 * visit localhost:4444
 
 Fill in the table containing (resistance, adc reading) touples.
@@ -32,8 +34,8 @@ Feedback route on http
 
 Working */adc* route allows communication with the device
 
-  curl 192.168.3.3/adc
-  {"raw": [1349, ...], "translated": [36, ...]}
+    curl 192.168.3.3/adc
+    {"raw": [1349, ...], "translated": [36, ...]}
 
 where 192.168.3.3 is the default device IP address. It can be changed
 inside options.coffee.
