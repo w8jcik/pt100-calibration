@@ -11,7 +11,6 @@ Usage
 -----
 
 * clone
-*
 
     bower install
     make client-once
